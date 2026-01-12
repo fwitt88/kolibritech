@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 512 512"
+     role="img"
+     aria-label="Kolibri Mark">
+  <title>Kolibri Mark</title>
+
+  <!-- Single-color, brand-ready hummingbird -->
+  <path fill="currentColor" d="
+    M420 210
+    c-22-6-64-6-102 8
+    -14-40-46-92-116-120
+    -48-18-104-8-132 22
+    40-6 92 14 120 42
+    -44 10-88 36-116 66
+    36-18 88-24 124-18
+    -18 26-34 66-38 104
+    26-28 56-64 74-92
+    8 36 8 76-4 114
+    28-28 56-70 74-118
+    26 14 64 20 92 14
+    -18-10-32-16-52-22
+    z"/>
+</svg>
