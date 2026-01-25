@@ -269,7 +269,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   height: 100%;
   display: block;
   object-fit: cover;
-  object-position: 50% 20%;
+  object-position: 50% 12%;
 }
 
 @media (max-width: 860px){
@@ -281,7 +281,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
     max-height: 360px;
   }
   .hero__photo{
-    object-position: 50% 25%;
+    object-position: 50% 6%;
   }
 }
 
