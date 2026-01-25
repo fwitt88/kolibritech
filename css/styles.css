@@ -256,6 +256,14 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   max-height: 440px;
 }
 
+.hero__bullets{
+  margin: 0 0 16px;
+  padding-left: 18px;
+  color: var(--muted);
+  font-size: 14px;
+}
+.hero__bullets li{ margin: 8px 0; }
+
 .hero__photo{
   width: 100%;
   height: 100%;
