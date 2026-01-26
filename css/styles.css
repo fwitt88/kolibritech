@@ -68,11 +68,10 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   background: rgba(11,15,20,0.55);
   border-bottom: 1px solid var(--border);
 }
-.header__inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  padding: 14px 0;
+.header__inner {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
 
 .brand{
@@ -101,15 +100,13 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 .brand__text{ font-size: 15px; }
 
 /* Nav */
-.nav{ position:relative; }
-.nav__toggle{
-  display:none;
-  border:1px solid var(--border);
-  background: rgba(255,255,255,0.04);
-  color:var(--text);
-  border-radius: 12px;
-  padding:10px 12px;
-  cursor:pointer;
+.nav{
+  position: relative;
+  flex: 1;            /* NEU: nimmt den verfügbaren Platz ein */
+  display: flex;      /* NEU: damit Menü + Language sauber in einer Linie sind */
+  align-items: center;
+  justify-content: flex-end;  /* Menü nach rechts schieben */
+  gap: 16px;
 }
 .nav__toggleLines{
   display:block;
@@ -173,7 +170,7 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   display:flex;
   align-items:center;
   gap:8px;
-  margin-left: 14px;
+  margin-left: auto;   /* statt 14px */
 }
 .lang__link{
   color: var(--muted2);
@@ -463,4 +460,16 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
 
 @media (max-width: 860px){
   .footer__inner{ flex-direction:column; align-items:flex-start; }
+}
+/* =========================
+   Language switch – mobile
+   ========================= */
+@media (max-width: 860px){
+  .nav{
+    justify-content: flex-end;
+  }
+
+  .lang{
+    margin-left: 12px; /* neben Burger, nicht zentriert */
+  }
 }
