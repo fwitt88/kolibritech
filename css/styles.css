@@ -169,6 +169,24 @@ a:hover{ text-decoration:underline; text-underline-offset: 4px; }
   }
 }
 
+.lang{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-left: 14px;
+}
+.lang__link{
+  color: var(--muted2);
+  font-size: 13px;
+  text-decoration: none;
+}
+.lang__link:hover{ color: var(--text); text-decoration:none; }
+.lang__link--active{
+  color: var(--text);
+  font-weight: 700;
+}
+.lang__sep{ color: rgba(255,255,255,0.35); }
+
 /* Buttons */
 .btn{
   display:inline-flex;
