@@ -3,113 +3,223 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-
   <title>Kolibri Tech</title>
   <meta name="description" content="Kolibri Tech — tecnología simple y útil para clínicas dentales reales en Latinoamérica." />
-
-  <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="/assets/icons/favicon.svg" />
-
-  <!-- Social preview -->
   <meta property="og:title" content="Kolibri Tech" />
   <meta property="og:description" content="Tecnología simple y útil para clínicas dentales reales en Latinoamérica." />
   <meta property="og:type" content="website" />
-  <!-- Optional: <meta property="og:image" content="https://kolibritech.net/assets/img/og.jpg" /> -->
-
   <link rel="stylesheet" href="/css/styles.css" />
   <link rel="canonical" href="https://kolibritech.net/" />
-<link rel="alternate" hreflang="es" href="https://kolibritech.net/" />
-<link rel="alternate" hreflang="en" href="https://kolibritech.net/en/" />
+  <link rel="alternate" hreflang="es" href="https://kolibritech.net/" />
+  <link rel="alternate" hreflang="en" href="https://kolibritech.net/en/" />
+ 
+  <style>
+    /* ── HISTORIA ── */
+    .historia__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+      margin-top: 2.5rem;
+    }
+    .historia__intro {
+      font-size: 1.35rem;
+      font-weight: 400;
+      line-height: 1.45;
+      color: var(--color-text, #1C2321);
+      margin-bottom: 1.5rem;
+    }
+    .historia__intro em {
+      font-style: italic;
+      color: var(--color-green, #4A7C6F);
+    }
+    .historia__body p {
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--color-muted, #6B7A76);
+      margin-bottom: 1.1rem;
+    }
+    .historia__body p:last-child { margin-bottom: 0; }
+    .historia__body strong {
+      color: var(--color-text, #1C2321);
+      font-weight: 500;
+    }
+ 
+    /* Timeline strip */
+    .historia__timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+      margin-top: 2rem;
+      border-top: 1px solid var(--color-border, rgba(28,35,33,.1));
+      padding-top: 1.5rem;
+    }
+    .tl-item {
+      display: flex;
+      gap: 1rem;
+      padding-bottom: 1.1rem;
+      position: relative;
+    }
+    .tl-item:last-child { padding-bottom: 0; }
+    .tl-year {
+      font-size: 12px;
+      font-weight: 600;
+      color: #4A7C6F;
+      min-width: 70px;
+      padding-top: 2px;
+      letter-spacing: .04em;
+    }
+    .tl-text {
+      font-size: 13px;
+      color: var(--color-muted, #6B7A76);
+      line-height: 1.5;
+    }
+    .tl-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #4A7C6F;
+      margin-top: 5px;
+      flex-shrink: 0;
+      opacity: .5;
+    }
+ 
+    /* Photo column */
+    .historia__photo-col {
+      position: sticky;
+      top: 80px;
+    }
+    .historia__photo {
+      width: 100%;
+      border-radius: 16px;
+      display: block;
+      object-fit: cover;
+      aspect-ratio: 3/4;
+    }
+    .historia__photo-caption {
+      font-size: 12px;
+      color: var(--color-muted, #6B7A76);
+      margin-top: .75rem;
+      text-align: center;
+    }
+ 
+    /* ── FUNDADORES revisados ── */
+    .founders__photo {
+      width: 100%;
+      border-radius: 14px;
+      margin-bottom: 2rem;
+      display: block;
+      object-fit: cover;
+      max-height: 320px;
+      object-position: top;
+    }
+    .founderCard__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .4rem;
+      margin-top: .875rem;
+    }
+    .founderCard__tag {
+      background: var(--color-green-light, #E4EDEB);
+      color: #4A7C6F;
+      border-radius: 100px;
+      padding: 2px 10px;
+      font-size: 11.5px;
+    }
+    .founderCard__quote {
+      font-size: 13px;
+      font-style: italic;
+      color: var(--color-muted, #6B7A76);
+      border-left: 2px solid #B8CFC8;
+      padding-left: .75rem;
+      margin-top: .875rem;
+    }
+    .founders__subhead {
+      font-size: 15px;
+      color: var(--color-muted, #6B7A76);
+      margin-bottom: 1.75rem;
+      max-width: 540px;
+    }
+ 
+    /* ── HERO badge ── */
+    .badge--duo {
+      display: inline-flex;
+      align-items: center;
+      gap: .4rem;
+    }
+    .badge--duo span { opacity: .45; }
+ 
+    /* Responsive */
+    @media (max-width: 760px) {
+      .historia__layout { grid-template-columns: 1fr; gap: 2rem; }
+      .historia__photo-col { position: static; }
+      .historia__photo { aspect-ratio: 4/3; }
+    }
+  </style>
 </head>
-
 <body>
   <a class="skip-link" href="#main">Saltar al contenido</a>
-
+ 
   <!-- Header -->
   <header class="header">
     <div class="container header__inner">
       <a class="brand" href="#">
-        <span class="brand__mark" aria-hidden="true">
-          <!-- Optional: replace with your SVG mark -->
-          <span class="dot"></span>
-        </span>
+        <span class="brand__mark" aria-hidden="true"><span class="dot"></span></span>
         <span class="brand__text">Kolibri Tech</span>
       </a>
-
       <nav class="nav" aria-label="Navegación principal">
-  <button class="nav__toggle" type="button"
-          aria-expanded="false" aria-controls="navMenu">
-    <span class="nav__toggleLines" aria-hidden="true"></span>
-    <span class="sr-only">Abrir menú</span>
-  </button>
-
-  <ul class="nav__menu" id="navMenu">
-    <li><a href="#vision">Visión</a></li>
-    <li><a href="#mission">Misión</a></li>
-    <li><a href="#story">Historia</a></li>
-    <li><a href="#founders">Fundadores</a></li>
-    <li><a href="#why">Por qué Kolibri</a></li>
-    <li>
-      <a class="btn btn--small" href="mailto:hello@kolibritech.net">
-        Contactar
-      </a>
-    </li>
-  </ul>
-
-  <!-- Language switch -->
-  <div class="lang" aria-label="Selector de idioma">
-    <span class="lang__active">ES</span>
-<span class="lang__sep">|</span>
-<a class="lang__link" href="/en/">EN</a>
-  </div>
-</nav>
+        <button class="nav__toggle" type="button" aria-expanded="false" aria-controls="navMenu">
+          <span class="nav__toggleLines" aria-hidden="true"></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+        <ul class="nav__menu" id="navMenu">
+          <li><a href="#vision">Visión</a></li>
+          <li><a href="#mission">Misión</a></li>
+          <li><a href="#story">Historia</a></li>
+          <li><a href="#founders">Fundadores</a></li>
+          <li><a href="#why">Por qué Kolibri</a></li>
+          <li><a class="btn btn--small" href="mailto:hello@kolibritech.net">Contactar</a></li>
+        </ul>
+        <div class="lang" aria-label="Selector de idioma">
+          <span class="lang__active">ES</span>
+          <span class="lang__sep">|</span>
+          <a class="lang__link" href="/en/">EN</a>
+        </div>
+      </nav>
     </div>
   </header>
-
+ 
   <main id="main">
+ 
     <!-- Hero -->
     <section class="hero">
       <div class="container hero__grid">
         <div class="hero__copy">
-          <p class="badge">Dentista + Ingeniero Comercial / MBA</p>
+          <p class="badge">Dentista + Ingeniero Comercial</p>
           <h1>Tecnología clara y útil para clínicas dentales reales.</h1>
-         <p class="lead">
-  Construimos software simple para que las clínicas tengan control — sin complejidad innecesaria
-  y sin perder tiempo en planillas.
-</p>
-
-<ul class="hero__bullets">
-  <li>Inventario y consumos claros — sabes qué se usa y cuánto cuesta</li>
-  <li>Costos reales por tratamiento (materiales + tiempos)</li>
-  <li>Menos planillas, menos enredos — todo en un solo lugar</li>
-</ul>
-
-<div class="hero__cta">
-  <a class="btn" href="mailto:hello@kolibritech.net">Hablemos</a>
-  <a class="btn btn--ghost" href="https://getkolibri.app" target="_blank" rel="noreferrer">Ver producto</a>
-</div>
-
+          <p class="lead">
+            Construimos software simple para que las clínicas tengan control — sin complejidad innecesaria y sin perder tiempo en planillas.
+          </p>
+          <ul class="hero__bullets">
+            <li>Inventario y consumos claros — sabes qué se usa y cuánto cuesta</li>
+            <li>Costos reales por tratamiento (materiales + tiempos)</li>
+            <li>Menos planillas, menos enredos — todo en un solo lugar</li>
+          </ul>
+          <div class="hero__cta">
+            <a class="btn" href="mailto:hello@kolibritech.net">Hablemos</a>
+            <a class="btn btn--ghost" href="https://getkolibri.app" target="_blank" rel="noreferrer">Ver producto</a>
+          </div>
           <p class="fineprint">
             Estamos construyendo Kolibri Dental (MVP) para Chile — y aprendiendo rápido con clínicas reales.
           </p>
         </div>
-
         <div class="hero__media" aria-label="Foto de los fundadores">
-          <!-- Founders Photo -->
-         <img
-  class="hero__photo"
-  src="/img/founders.jpg"
-  alt="Los fundadores de Kolibri Tech"
-  loading="eager"
-/>
-
-          <!-- Option B: If you have an image, uncomment and add file
-          <img class="hero__photo" src="assets/img/founders-placeholder.jpg" alt="Los fundadores de Kolibri Tech" />
-          -->
+          <img class="hero__photo" src="/img/founders.jpg" alt="Daniela y Florian, fundadores de Kolibri Tech" loading="eager" />
         </div>
       </div>
     </section>
-
+ 
     <!-- Vision -->
     <section class="section" id="vision">
       <div class="container">
@@ -125,7 +235,7 @@
           </div>
           <div class="card">
             <h3>Simplicidad</h3>
-            <p>Menos “features”, más impacto. Lo esencial bien hecho.</p>
+            <p>Menos "features", más impacto. Lo esencial bien hecho.</p>
           </div>
           <div class="card">
             <h3>Confianza</h3>
@@ -134,7 +244,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- Mission -->
     <section class="section section--alt" id="mission">
       <div class="container">
@@ -142,91 +252,173 @@
         <p class="textWide">
           Reducir el tiempo administrativo y aumentar el control operativo para que el equipo se enfoque en pacientes.
         </p>
-
         <ul class="bullets">
-          <li><strong>Inventario transparente:</strong> entradas/salidas y stock real sin “magia”.</li>
+          <li><strong>Inventario transparente:</strong> entradas/salidas y stock real sin "magia".</li>
           <li><strong>Costos claros:</strong> entender márgenes y decisiones sin Excel infinito.</li>
           <li><strong>Operación ordenada:</strong> registro simple de la actividad y KPIs accionables.</li>
         </ul>
       </div>
     </section>
-
-    <!-- Story -->
+ 
+    <!-- Historia -->
     <section class="section" id="story">
       <div class="container">
-        <h2>Nuestra historia</h2>
-        <div class="story">
-          <div class="story__block">
-            <h3>El problema</h3>
-            <p>
-              En muchas clínicas, el inventario “se siente” pero no se conoce. Se compra de más, faltan insumos
-              en el peor momento, y el control depende de memoria, WhatsApp y planillas.
+        <h2>Historia</h2>
+ 
+        <div class="historia__layout">
+ 
+          <!-- LEFT: texto -->
+          <div>
+            <p class="historia__intro">
+              Kolibri nació en una cena.<br>
+              <em>Pero empezó mucho antes.</em>
             </p>
+ 
+            <div class="historia__body">
+              <p>
+                En 2025, Florian había recién comenzado su MBA. Una noche, sobre la mesa,
+                le explicó a Daniela algunos conceptos que le parecían especialmente útiles:
+                cómo las empresas saben realmente cuánto les cuesta cada cosa, cómo controlan
+                sus materiales, cómo toman decisiones con datos en lugar de intuición.
+                Daniela escuchó y conectó rápido:
+                <strong>"Eso es exactamente lo que falta en las clínicas dentales."</strong>
+              </p>
+              <p>
+                Ella trabajaba en una práctica en Alemania. El sistema de inventario
+                era un papel pegado a la pared. Nadie sabía cuánto costaba realmente
+                cada tratamiento, ni qué materiales se agotaban primero. En Chile,
+                donde Daniela había estudiado y comenzado su carrera, la gestión de costos
+                tampoco era muy distinta — los insumos se compraban por intuición, sin un plan detrás.
+              </p>
+              <p>
+                No era la primera vez que Florian veía ese problema. Años atrás, cuando
+                Daniela recién empezaba a trabajar como dentista, él le había armado una
+                primera herramienta para ordenar sus ingresos y gastos — el controlador
+                que lleva dentro. Funcionó. Y quedó claro que la brecha era real.
+              </p>
+              <p>
+                Florian conocía el mundo de los costos desde adentro: había vivido en Chile
+                casi una década, donde comenzó su carrera en controlling financiero para una
+                empresa alemana de escala global — gestionando presupuestos y centros de costo —
+                y luego pasó al área de IT, liderando proyectos de implementación de sistemas
+                de gestión empresarial en múltiples países. Aprendió algo que pocas
+                organizaciones quieren escuchar: <strong>mientras todos celebran los ingresos,
+                los costos siguen ahí, silenciosos, erosionando el margen.</strong>
+                Eso es lo que Kolibri trae a las clínicas dentales — por primera vez,
+                ver los dos lados de la ecuación.
+              </p>
+              <p>
+                Esa conversación terminó con una decisión:
+                <strong>construir la herramienta que ninguno de los dos había podido encontrar.</strong>
+              </p>
+            </div>
+ 
+            <div class="historia__timeline">
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2014</div>
+                <div class="tl-text">Se conocen en Chile. Florian en semestre de intercambio.</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2015 – 2021</div>
+                <div class="tl-text">Florian vive y trabaja en Chile. Controlling financiero y proyectos de transformación digital en empresa alemana de escala global.</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2019 – 2020</div>
+                <div class="tl-text">Dany termina su carrera. Florian le arma su primera herramienta de gestión — la primera señal de que el problema valía la pena resolver.</div>
+              </div>
+              <div class="tl-item">
+                <div class="tl-dot"></div>
+                <div class="tl-year">2025</div>
+                <div class="tl-text">La cena del MBA. El papel pegado a la pared. La idea. Nace Kolibri.</div>
+              </div>
+            </div>
           </div>
-          <div class="story__block">
-            <h3>Dos miradas</h3>
-            <p>
-              Una dentista viviendo el caos real. Un profesional de ERP/transformación cansado de sistemas
-              complejos que no se adaptan a pymes. Mismo dolor, perspectivas complementarias.
-            </p>
+ 
+          <!-- RIGHT: foto -->
+          <div class="historia__photo-col">
+            <img
+              class="historia__photo"
+              src="/img/founders.jpg"
+              alt="Daniela y Florian, fundadores de Kolibri Tech"
+              loading="lazy"
+            />
+            <p class="historia__photo-caption">Daniela &amp; Florian — los fundadores</p>
           </div>
-          <div class="story__block">
-            <h3>La solución</h3>
-            <p>
-              Kolibri nace para ofrecer control operativo con una experiencia simple: inventario transaccional,
-              costos entendibles y visibilidad para tomar mejores decisiones — sin fricción.
-            </p>
-          </div>
+ 
         </div>
       </div>
     </section>
-
-    <!-- Founders -->
+ 
+    <!-- Fundadores -->
     <section class="section section--alt" id="founders">
       <div class="container">
         <h2>Fundadores</h2>
-
+        <p class="founders__subhead">
+          Somos pareja. Y por eso entendemos el problema mejor que nadie.
+        </p>
+ 
         <div class="founders">
           <article class="founderCard">
             <div class="founderCard__avatar" aria-hidden="true">D</div>
             <div>
               <h3>Daniela — Dentista</h3>
               <p>
-                Aporta la perspectiva de la clínica real: procesos, dolores diarios, y lo que de verdad importa.
-                “Si no reduce fricción en el día a día, no sirve”.
+                Dentista en ejercicio, con experiencia en clínicas en Chile y Alemania.
+                Conoce de primera mano lo que pasa en la sala de espera, en el sillón
+                y detrás del mesón: el tiempo perdido, el inventario sin control, los costos
+                que nadie mide. Si Kolibri no resuelve algo que ella misma usaría,
+                no entra en el producto.
               </p>
+              <div class="founderCard__tags">
+                <span class="founderCard__tag">Odontología</span>
+                <span class="founderCard__tag">Procesos clínicos</span>
+                <span class="founderCard__tag">Ventas &amp; Validación</span>
+              </div>
+              <p class="founderCard__quote">"Si no reduce fricción en el día a día, no sirve."</p>
             </div>
           </article>
-
+ 
           <article class="founderCard">
             <div class="founderCard__avatar" aria-hidden="true">F</div>
             <div>
-              <h3>Florian — Business & Tech (ERP / MBA)</h3>
+              <h3>Florian — Negocio, Producto &amp; Tech</h3>
               <p>
-                Diseña sistemas simples basados en control transaccional y buenas prácticas de proceso — sin
-                sobre-ingeniería. Enfoque: claridad, datos consistentes, y decisiones medibles.
+                Vivió en Chile casi una década, donde comenzó su carrera en controlling
+                financiero para una empresa alemana de escala global — gestionando presupuestos
+                y centros de costo — y luego pasó al área de IT, liderando implementaciones
+                de sistemas de gestión empresarial en múltiples países. Lo que aprendió en ese
+                recorrido es raro: entiende el negocio desde adentro, y sabe cómo traducirlo
+                a tecnología. No es desarrollador — es el puente entre lo que una organización
+                necesita y las herramientas que lo hacen posible.
               </p>
+              <div class="founderCard__tags">
+                <span class="founderCard__tag">Controlling financiero</span>
+                <span class="founderCard__tag">Transformación digital</span>
+                <span class="founderCard__tag">Finanzas corporativas</span>
+                <span class="founderCard__tag">MBA</span>
+              </div>
+              <p class="founderCard__quote">"El controlling no es un freno — es lo que permite tomar decisiones reales."</p>
             </div>
           </article>
         </div>
-
+ 
         <div class="note">
-          <p>
-            ¿Quieres colaborar o hablar con nosotros? <a href="mailto:hello@kolibritech.net">hello@kolibritech.net</a>
-          </p>
+          <p>¿Quieres colaborar o hablar con nosotros? <a href="mailto:hello@kolibritech.net">hello@kolibritech.net</a></p>
         </div>
       </div>
     </section>
-
+ 
     <!-- Why Kolibri -->
     <section class="section" id="why">
       <div class="container">
-        <h2>Por qué “Kolibri”</h2>
+        <h2>Por qué "Kolibri"</h2>
         <p class="textWide">
           El colibrí representa precisión, velocidad y eficiencia: pequeño, pero increíblemente capaz.
           Esa es nuestra obsesión: <strong>software liviano</strong> que genera <strong>impacto real</strong>.
         </p>
-
         <div class="ctaCard">
           <div>
             <h3>Kolibri Dental</h3>
@@ -239,7 +431,7 @@
         </div>
       </div>
     </section>
-
+ 
     <!-- Footer -->
     <footer class="footer">
       <div class="container footer__inner">
@@ -251,8 +443,9 @@
         </div>
       </div>
     </footer>
+ 
   </main>
-
   <script src="/js/main.js"></script>
 </body>
 </html>
+ 
