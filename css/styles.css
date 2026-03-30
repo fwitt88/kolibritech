@@ -148,10 +148,11 @@ a:hover { text-decoration: underline; text-underline-offset: 3px; }
   border-radius: 8px;
   transition: color .15s, background .15s;
 }
-.nav__menu a:hover {
-  color: var(--text);
-  background: var(--bg3);
-  text-decoration: none;
+.nav__menu a.btn {
+  color: #fff;
+}
+.nav__menu a.btn:hover {
+  color: #fff;
 }
  
 /* Language */
